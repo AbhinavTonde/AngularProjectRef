@@ -1,0 +1,39 @@
+<fieldset style="width: 50%; margin-left: 25%; margin-top: 8vh; padding: 30px;">
+    <legend>Registration Form</legend>
+    <form (ngSubmit)="handleSubmit(myForm)" #myForm="ngForm">
+
+        <label for="">User Name</label> &nbsp;&nbsp;
+        <input type="text" name="userName" id="name" ngModel> <br><br>
+
+        <label for="">User Pass</label> &nbsp;&nbsp;
+        <input type="password" name="uPswd" id="pswd" ngModel> <br><br>
+
+        <label for="">User Age</label> &nbsp;&nbsp;
+        <input type="number" name="uAge" id="age" ngModel> <br><br>
+
+        <label for="">User Dob</label> &nbsp;&nbsp;
+        <input type="date" name="uDob" id="dob" ngModel> <br><br>
+
+        <label for="">User Gender</label> <br><br>
+        <label for="">Male</label>&nbsp;
+        <input type="radio" name="gender" id="male" value="male" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="">Female</label>&nbsp;
+        <input type="radio" name="gender" id="female" value="female" ngModel> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <label for="">Other</label>&nbsp;
+        <input type="radio" name="gender" id="other" value="other" ngModel> <br><br>
+
+        <input type="submit" value="Add Data">
+
+    </form>
+    <br><br>
+</fieldset>
+
+
+<h1>
+{{myForm.value|json}}
+</h1>
+<br>
+<br>
+<br>
+<br>
+<app-two-way-binding-demo></app-two-way-binding-demo>

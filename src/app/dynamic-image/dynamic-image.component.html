@@ -1,0 +1,11 @@
+<select [(ngModel)]="image">
+    <option value="Wallpaper1">Wallpaper1</option>
+    <option value="Wallpaper2">Wallpaper2</option>
+    <option value="Wallpaper4">Wallpaper4</option>
+    <option value="Wallpaper5">Wallpaper5</option>
+    <option value="Wallpaper6">Wallpaper6</option>
+</select> &nbsp;&nbsp;&nbsp;&nbsp;
+
+<button (click)="showImage()">Show Image</button><br><br>
+
+<img [src]="imgPath" alt="" height="300px" width="500px">

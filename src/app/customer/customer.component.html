@@ -1,0 +1,25 @@
+<table border="2px" cellpadding="15px" cellspacing="0px" width="100%"
+    *ngIf="custArr.length>4" >
+
+    <tr>
+        <th>custId</th>
+        <th>custName</th>
+        <th>country</th>
+        <th>city</th>
+        <th>contactNo</th>
+    </tr>
+
+    <tr *ngFor="let itr of custArr">
+        <td>{{itr.custId}}</td>
+        <td>{{itr.custName}}</td>
+        <td>{{itr.country}}</td>
+        <td>{{itr.city}}</td>
+        <td>{{itr.contactNo}}</td>
+    </tr>
+   
+</table>
+
+<h1 *ngIf="custArr.length<=4"> Records are less than 4. </h1>
+
+<button (click)="addRecord()">Add New Record</button>
+<button (click)="removeRecord()">Remove Record</button>

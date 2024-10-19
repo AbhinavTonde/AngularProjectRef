@@ -1,0 +1,45 @@
+<table>
+    <tr>
+        <th>Player Id</th>
+        <th>Player Name</th>
+        <th>Player Country</th>
+        <th>Last IPL Contract</th>
+        <th>Players Sports</th>
+    </tr>
+    <tbody *ngFor="let player of listOfPlayer" [ngSwitch]="player.playerCountry">
+        <tr *ngSwitchCase="'India'" class="ind">
+            <td>{{player.playerId}}</td>
+            <td>{{player.playerName}}</td>
+            <td>{{player.playerCountry}}</td>
+            <td>{{player.lastIplContract|convertToCrore|currency:'INR'}} </td>
+            <td>{{player.sportName}}</td>
+        </tr>
+        <tr *ngSwitchDefault class="default">
+            <td>{{player.playerId}}</td>
+            <td>{{player.playerName}}</td>
+            <td>{{player.playerCountry}}</td>
+            <td>{{player.lastIplContract|convertToCrore|currency}} </td>
+            <td>{{player.sportName}}</td>
+        </tr>
+        <tr *ngSwitchCase="'Australia'" class="aus">
+            <td>{{player.playerId}}</td>
+            <td>{{player.playerName}}</td>
+            <td>{{player.playerCountry}}</td>
+            <td>{{player.lastIplContract|convertToCrore|currency:'EUR'}} </td>
+            <td>{{player.sportName}}</td>
+        </tr>
+        <tr *ngSwitchCase="'Sri Lanka'" class="sri">
+            <td>{{player.playerId}}</td>
+            <td>{{player.playerName}}</td>
+            <td>{{player.playerCountry}}</td>
+            <td>{{player.lastIplContract|convertToCrore|currency:'JPY'}} </td>
+            <td>{{player.sportName}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div [ngClass]="dynamicCss" (click)="changeCss()">
+    Lorem ipsum dolor sit amet.
+</div>
